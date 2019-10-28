@@ -17,5 +17,3 @@ for value in rideDataDict['watts_calc']:
 averagePower = averagePower / index;
 
 print averagePower;
-
-# print rideDataDict['watts_calc'];
