@@ -106,7 +106,7 @@ def findSpeedWithParams(power, gradient, surface, position, height, wind):
 	printSpeeds(speed(power, gradient, surface, position, height, wind))
 
 
-printSpeeds( speed(200, 5, "asphalt", "tops", 300, 0) )
+# printSpeeds( speed(200, 5, "asphalt", "tops", 300, 0) )
 
-findSpeedWithParams(250, 0, "asphalt", "aerobars", 0, 0);
+# findSpeedWithParams(250, 0, "asphalt", "aerobars", 0, 0);
 

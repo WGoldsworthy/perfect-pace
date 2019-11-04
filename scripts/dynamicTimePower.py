@@ -33,9 +33,8 @@ if (args.t):
 			averagePower = 0;
 			index = time;
 			while (index > 1):
-				if (dataLength < (valIndex + index)):
-					break
-				averagePower = averagePower + rideDataDict['watts_calc'][valIndex + index]
+				if (dataLength > (valIndex + index)):
+					averagePower = averagePower + rideDataDict['watts_calc'][valIndex + index]
 				index = index - 1;
 			valIndex = valIndex + 1;
 			averagePower = averagePower / time
@@ -54,8 +53,8 @@ if (args.t):
 		if max > maxPower:
 			maxPower = max
 
-	print "Max Power for " + str(time) + " seconds"
-	print maxPower
+	print("Max Power for " + str(time) + " seconds")
+	print(maxPower)
 
 
 def getMaxPower(time): 
