@@ -1,0 +1,13 @@
+#Fa = 0.5 * Cd * A * p * (v + w)^2
+
+fa / (0.5 * Cd * A * p) = v^2 + 2wv + w^2
+
+v(v + 2w) = (fa / (0.5 * Cd * A * p) ) - (w^2)
+
+v^2 + 2wv - ( (fa / (0.5 * Cd * A * p) ) - (w^2) ) = 0
+
+c = ( fa / (0.5 * Cd * A * p) ) - w^2
+
+x = -b +- root(b^2 - 4ac) / (2a)
+
+v = -2w +- root( (2w)^2 - 4c) / 2
