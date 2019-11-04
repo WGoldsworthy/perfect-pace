@@ -5,6 +5,9 @@ import json
 import numpy
 import argparse
 import sys
+import imp
+
+constants = imp.load_source('data.constants', './data/data.py')
 
 parser = argparse.ArgumentParser(description='Get Max power for a given time period')
 parser.add_argument('-t', metavar='t', type=int,
@@ -55,6 +58,7 @@ if (args.t):
 
 	print("Max Power for " + str(time) + " seconds")
 	print(maxPower)
+	print( str(maxPower / constants.weight) + " W/Kg" )
 
 
 def getMaxPower(time): 
