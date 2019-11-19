@@ -28,8 +28,8 @@ with open('./data/profiles/' + profileFile, 'r') as file:
 def roundTo(x, base=30):
     return base * round(x/base)
 
-def getSpeed(power):
-	return helpers.speed(power, profile['gradient'], surface, position, height, wind);
+def getSpeed(power, gradient):
+	return helpers.speed(power, gradient, surface, position, height, wind);
 
 
 def timeTakenForClimb(speed, distance):
@@ -40,19 +40,20 @@ def timeTakenForClimb(speed, distance):
 
 def findBestTimeForClimb():
 	power = 700;
-	time = timeTakenForClimb(getSpeed(power), profile['distance']);
+	time = timeTakenForClimb(getSpeed(power, profile['gradient']), profile['distance']);
 
 	isAcheivable = False;
 
 	while (not isAcheivable):
 		if (power > powerData[str(roundTo(time, 30))] ):
 			power = power - 1
-			time = timeTakenForClimb(getSpeed(power), profile['distance']);
+			time = timeTakenForClimb(getSpeed(power, profile['gradient']), profile['distance']);
 		else:
 			isAcheivable = True
 
 	print("Perfect pace requires a power of " + str(power));
 	print("And be a time of " + str(datetime.timedelta(seconds=time)))
+	print("With an average speed of " + str(getSpeed(power,profile['gradient'])) + " mph")
 
 
 findBestTimeForClimb()
